@@ -1,32 +1,15 @@
 pipeline {
     agent any
 
+	parameters {
+        string(defaultValue: '', name: 'phpmetrics_version')
+	}
+
     stages {
         stage('build') {
             steps {
                 script {
-                    image = docker.build("elnebuloso/php-phpmetrics", "--build-arg VERSION=1.10.0 --pull --rm --no-cache -f Dockerfile .")
-
-                    image.inside("--entrypoint=''") {
-                        phpmetrics_version = sh(script: "phpmetrics --version | grep -Po '((\\d+\\.)+\\d+)'", returnStdout: true).trim()
-                    }
-
-                    semver = semver(phpmetrics_version)
-
-                    docker.withRegistry("https://registry.hub.docker.com", '061d45cc-bc11-4490-ac21-3b2276f1dd05'){
-                        image.push("${semver.get('tag_revision')}")
-                        image.push("${semver.get('tag_minor')}")
-                        image.push("${semver.get('tag_major')}")
-                        image.push()
-                    }
-                }
-            }
-        }
-
-        stage('build latest') {
-            steps {
-                script {
-                    image = docker.build("elnebuloso/php-phpmetrics", "--pull --rm --no-cache -f Dockerfile .")
+                    image = docker.build("elnebuloso/php-phpmetrics", "--build-arg PHPMETRICS_VERSION=${params.phpmetrics_version} --pull --rm --no-cache -f Dockerfile .")
 
                     image.inside("--entrypoint=''") {
                         phpmetrics_version = sh(script: "phpmetrics --version | grep -Po '((\\d+\\.)+\\d+)'", returnStdout: true).trim()
