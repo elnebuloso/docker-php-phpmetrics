@@ -12,7 +12,7 @@ pipeline {
                     image = docker.build("elnebuloso/php-phpmetrics", "--build-arg PHPMETRICS_VERSION=${params.phpmetrics_version} --pull --rm --no-cache -f Dockerfile .")
 
                     image.inside("--entrypoint=''") {
-                        phpmetrics_version = sh(script: "phpmetrics --version | grep -Po '((\\d+\\.)+\\d+)'", returnStdout: true).trim()
+                        phpmetrics_version = sh(script: "phpmetrics --version | grep -Eo '((\\d+\\.)+\\d+)'", returnStdout: true).trim()
                     }
 
                     semver = semver(phpmetrics_version)
