@@ -4,7 +4,7 @@ MAINTAINER jeff.tunessen@gmail.com
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /srv
 
-ARG VERSION
+ARG PHPMETRICS_VERSION
 
 RUN echo "install version" \
     && if [ "$PHPMETRICS_VERSION" = "" ]; then composer global require phpmetrics/phpmetrics --no-suggest --no-ansi --no-interaction ; fi \
