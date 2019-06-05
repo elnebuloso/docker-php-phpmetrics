@@ -1,10 +1,14 @@
 # docker-php-phpmetrics
 
-Dockerized PhpMetrics - Static analysis tool for PHP (http://www.phpmetrics.org/)
+[![Build Status](https://travis-ci.com/elnebuloso/docker-php-phpmetrics.svg?branch=master)](https://travis-ci.com/elnebuloso/docker-php-phpmetrics)
+[![Docker Pulls](https://img.shields.io/docker/pulls/elnebuloso/php-phpmetrics.svg)](https://hub.docker.com/r/elnebuloso/php-phpmetrics)
+[![GitHub](https://img.shields.io/github/license/elnebuloso/docker-ansible.svg)](https://github.com/elnebuloso/docker-php-phpmetrics)
 
-## docker
+Dockerized PhpMetrics - Static analysis tool for PHP
 
-See Supported Tags at https://hub.docker.com/r/elnebuloso/php-phpmetrics/tags/
+## links
+
+- http://www.phpmetrics.org/
 
 ## run
 

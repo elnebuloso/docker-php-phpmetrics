@@ -1,0 +1,26 @@
+language: minimal
+
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+script:
+  - version=$(mktemp)
+  - docker build --tag elnebuloso/php-phpmetrics --pull --rm --no-cache --file Dockerfile .
+  - docker run -it elnebuloso/php-phpmetrics --version > ${version}
+  - cat ${version}
+  - export MAJOR=$(cat ${version} | grep -Eo '((\\d+\\.)+\\d+)' | cut -d. -f1)
+  - export MINOR=$(cat ${version} | grep -Eo '((\\d+\\.)+\\d+)' | cut -d. -f2)
+  - export PATCH=$(cat ${version} | grep -Eo '((\\d+\\.)+\\d+)' | cut -d. -f3)
+  - echo "${MAJOR}.${MINOR}.${PATCH}"
+#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}.${PATCH}
+#  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}
+#  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}
+#  - docker push elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}.${PATCH}
+#  - docker push elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}
+#  - docker push elnebuloso/php-phpmetrics:${MAJOR}
+#  - docker push elnebuloso/php-phpmetrics
