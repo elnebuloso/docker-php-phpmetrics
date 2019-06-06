@@ -16,11 +16,11 @@ script:
   - export MINOR=$(cat ${version} | grep -Po '(\d+\.\d+\.\d+)' | cut -d. -f2)
   - export PATCH=$(cat ${version} | grep -Po '(\d+\.\d+\.\d+)' | cut -d. -f3)
   - echo "${MAJOR}.${MINOR}.${PATCH}"
-#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-#  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}.${PATCH}
-#  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}
-#  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}
-#  - docker push elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}.${PATCH}
-#  - docker push elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}
-#  - docker push elnebuloso/php-phpmetrics:${MAJOR}
-#  - docker push elnebuloso/php-phpmetrics
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}.${PATCH}
+  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}
+  - docker tag elnebuloso/php-phpmetrics elnebuloso/php-phpmetrics:${MAJOR}
+  - docker push elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}.${PATCH}
+  - docker push elnebuloso/php-phpmetrics:${MAJOR}.${MINOR}
+  - docker push elnebuloso/php-phpmetrics:${MAJOR}
+  - docker push elnebuloso/php-phpmetrics
