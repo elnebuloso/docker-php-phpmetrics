@@ -1,6 +1,8 @@
+<img src="https://raw.githubusercontent.com/elnebuloso/docker-php-phpmetrics/master/logo.png" width="100%"/>
+
 # docker-php-phpmetrics
 
-[![Build Status](https://travis-ci.com/elnebuloso/docker-php-phpmetrics.svg?branch=master)](https://travis-ci.com/elnebuloso/docker-php-phpmetrics)
+![Release](https://github.com/elnebuloso/docker-php-phpmetrics/workflows/Release/badge.svg)
 [![Docker Pulls](https://img.shields.io/docker/pulls/elnebuloso/php-phpmetrics.svg)](https://hub.docker.com/r/elnebuloso/php-phpmetrics)
 [![GitHub](https://img.shields.io/github/license/elnebuloso/docker-ansible.svg)](https://github.com/elnebuloso/docker-php-phpmetrics)
 
