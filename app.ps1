@@ -22,6 +22,5 @@ if ($command -eq "test") {
     Remove-Item -LiteralPath "./test/report" -Force -Recurse
     mkdir -p ./test/report
     git clone https://github.com/symfony/asset.git test/symfony-asset
-
     docker run --rm --volume ${pwd}:/app -w /app ${tag} --report-html=/app/test/report/report --report-csv=/app/test/report/report.csv --report-json=/app/test/report/report.json /app/test/symfony-asset
 }
