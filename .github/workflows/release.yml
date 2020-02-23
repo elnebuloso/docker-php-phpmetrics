@@ -36,7 +36,6 @@ jobs:
           docker push ${TAG}:${MAJOR}.${MINOR}.${PATCH}
           docker push ${TAG}:${MAJOR}.${MINOR}
           docker push ${TAG}:${MAJOR}
-          docker push ${TAG}
       - name: Version2
         run: |
           version=$(mktemp)
@@ -58,4 +57,3 @@ jobs:
           docker push ${TAG}:${MAJOR}.${MINOR}.${PATCH}
           docker push ${TAG}:${MAJOR}.${MINOR}
           docker push ${TAG}:${MAJOR}
-          docker push ${TAG}
