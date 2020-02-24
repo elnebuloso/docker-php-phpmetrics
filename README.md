@@ -4,9 +4,19 @@
 
 ![Release](https://github.com/elnebuloso/docker-php-phpmetrics/workflows/Release/badge.svg)
 [![Docker Pulls](https://img.shields.io/docker/pulls/elnebuloso/php-phpmetrics.svg)](https://hub.docker.com/r/elnebuloso/php-phpmetrics)
-[![GitHub](https://img.shields.io/github/license/elnebuloso/docker-ansible.svg)](https://github.com/elnebuloso/docker-php-phpmetrics)
+[![GitHub](https://img.shields.io/github/license/elnebuloso/docker-php-phpmetrics.svg)](https://github.com/elnebuloso/docker-php-phpmetrics)
 
 Dockerized PhpMetrics - Static analysis tool for PHP
+
+## github
+
+- https://github.com/elnebuloso/docker-php-phpmetrics
+
+## docker
+
+- https://hub.docker.com/r/elnebuloso/php-phpmetrics
+- https://hub.docker.com/r/elnebuloso/php-phpmetrics/tags?page=1&ordering=last_updated
+- weekly builds, 0 0 * * 0
 
 ## links
 
